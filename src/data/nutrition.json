@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Calories",
+    "value": "277kcal",
+    "isLast": false
+  },
+  {
+    "label": "Carbs",
+    "value": "0g",
+    "isLast": false
+  },
+  {
+    "label": "Protein",
+    "value": "20g",
+    "isLast": false
+  },
+  {
+    "label": "Fat",
+    "value": "22g",
+    "isLast": true
+  }
+]

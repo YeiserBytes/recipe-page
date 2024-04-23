@@ -1,0 +1,29 @@
+---
+import Title from './ui/Title.astro';
+
+interface Props {
+  title: string;
+  list: {
+    description: string;
+  }[];
+}
+
+const { title, list } = Astro.props;
+---
+
+<ul
+  class="w-full flex flex-col gap-5 font-outfit"
+>
+  <Title>{title}</Title>
+  {
+    list &&
+      list.map(({ description }) => (
+        <li class="text-sm text-dark-charcoal flex gap-7 ml-1">
+          <span class="text-nutmeg font-bold">•</span>
+          <span class="flex gap-1 justify-start items-center">
+            <p class="text-wenge-brown">{description}</p>
+          </span>
+        </li>
+      ))
+  }
+</ul>

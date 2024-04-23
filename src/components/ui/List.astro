@@ -1,0 +1,29 @@
+---
+interface Props {
+    title: string;
+    list: {
+        title: string;
+        description: string;
+    }[];
+}
+
+const { title, list } = Astro.props;
+---
+
+<ul
+  class="bg-[#FFF7FC] w-full flex flex-col px-7 py-7 rounded-lg gap-3 font-outfit"
+>
+  <h1 class="text-lg font-bold text-dark-raspberry">{title}</h1>
+  {
+    list &&
+      list.map(({ title, description }) => (
+        <li class="text-sm text-dark-charcoal flex gap-7 ml-1">
+          <span class="text-dark-raspberry font-bold">•</span>
+          <span class="flex gap-1 justify-start items-center">
+            <h2 class="font-bold">{title}</h2>
+            <p>{description}</p>
+          </span>
+        </li>
+      ))
+  }
+</u>

@@ -1,0 +1,35 @@
+---
+import Title from "./ui/Title.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  list: {
+    isLast: boolean;
+    label: string;
+    value: string;
+  }[];
+}
+
+const { title, description, list } = Astro.props;
+---
+
+<section class="w-full flex flex-col gap-5 font-outfit text-wenge-brown">
+  <Title>{title}</Title>
+  <p>{description}</p>
+  {
+    list && list.length > 0 && (
+      <ul class="flex flex-col gap-2 pt-2">
+        {list.map(({ label, value, isLast }) => (
+          <li class="flex flex-col">
+            <div class="flex md:ml-10 sm:justify-between">
+              <span class="flex-1">{label}</span>
+              <span class="flex-1 text-nutmeg font-bold">{value}</span>
+            </div>
+            {!isLast && <hr class="w-full my-5" />}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</section>
