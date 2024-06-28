@@ -12,7 +12,7 @@ interface Props {
 const { title, list } = Astro.props;
 ---
 
-<ul class="w-full flex flex-col gap-5 font-outfit">
+<ol class="w-full flex flex-col gap-5 font-outfit">
   <Title>{title}</Title>
   {
     list &&
@@ -26,4 +26,4 @@ const { title, list } = Astro.props;
         </li>
       ))
   }
-</ul>
+</ol>
